@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func Hello(name string) string {
-	return fmt.Sprintf("Hello, %s.", name)
+const englishPrefix = "Hello, %s."
+
+func Hello(name ...string) string {
+	if name == nil || strings.TrimSpace(name[0]) == "" {
+		return "Hello World"
+	}
+	return fmt.Sprintf(englishPrefix, name[0])
 }
