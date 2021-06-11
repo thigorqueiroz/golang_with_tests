@@ -7,9 +7,22 @@ import (
 
 const englishPrefix = "Hello, %s."
 
-func Hello(name ...string) string {
-	if name == nil || strings.TrimSpace(name[0]) == "" {
+func grettingFromLanguage(lang string) (prefix string) {
+	prefix = englishPrefix
+
+	switch lang {
+	case "spanish":
+		prefix = "Holla, %s."
+	case "portuguese":
+		prefix = "Oi, %s."
+	}
+	return
+}
+func Hello(name, language string) string {
+	if strings.TrimSpace(name) == "" {
 		return "Hello World"
 	}
-	return fmt.Sprintf(englishPrefix, name[0])
+
+	gretting := grettingFromLanguage(strings.ToLower(language))
+	return fmt.Sprintf(gretting, name)
 }
