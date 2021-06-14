@@ -2,6 +2,12 @@ package iteration
 
 import "testing"
 
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Repeat("a", 5)
+	}
+}
+
 func TestIteration(t *testing.T) {
 
 	t.Run("a should repeat 5 times", func(t *testing.T) {
