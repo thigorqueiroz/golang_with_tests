@@ -4,7 +4,7 @@ import "testing"
 
 func TestSum(t *testing.T) {
 
-	t.Run("sum of numbers using slice as parameter", func(t *testing.T) {
+	t.Run("sum of numbers", func(t *testing.T) {
 		numbers := []int{1, 2, 3, 4, 5, 6}
 		got := Sum(numbers)
 		want := 21
