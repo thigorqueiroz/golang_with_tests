@@ -18,11 +18,10 @@ func SumAll(numbersToSum ...[]int) []int {
 }
 
 func SumAllTails(numbersToSum ...[]int) []int {
-	sums := make([]int, len(numbersToSum))
-	for index, arr := range numbersToSum {
-		for i := 1; i < len(arr); i++ {
-			sums[index] += arr[i]
-		}
+	var sums []int
+	for _, numbers := range numbersToSum {
+		tail := numbers[1:]
+		sums = append(sums, Sum(tail))
 	}
 	return sums
 }

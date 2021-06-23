@@ -39,3 +39,14 @@ func TestSum(t *testing.T) {
 	})
 
 }
+
+func TestSlice(t *testing.T) {
+	sliceSample := []int{1, 2, 3, 4, 5, 6}
+	got := sliceSample[3:]
+	want := []int{4, 5, 6}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %d , want %d ", got, want)
+	}
+
+}
