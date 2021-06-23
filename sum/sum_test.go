@@ -38,6 +38,15 @@ func TestSum(t *testing.T) {
 
 	})
 
+	t.Run("safely sum empty slice", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{2, 3, 5})
+		want := []int{0, 8}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %d  want %d", got, want)
+		}
+	})
+
 }
 
 func TestSlice(t *testing.T) {
