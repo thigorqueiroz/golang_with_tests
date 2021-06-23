@@ -24,8 +24,18 @@ func TestSum(t *testing.T) {
 		want := []int{6, 9}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("GOT %d is diferent from WANT %d, values: %v, %v", got, want, numbersA, numbersB)
+			t.Errorf("GOT %d  WANT %d", got, want)
 		}
+	})
+
+	t.Run("sum all tails", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2, 3, 4}, []int{2, 4, 5, 6})
+		want := []int{9, 15}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %d want %d", got, want)
+		}
+
 	})
 
 }
