@@ -1,13 +1,23 @@
 package strut_meth_interface
 
+import "math"
+
 type Rectangule struct {
 	width, heigth float64
 }
 
-func Perimeter(rectangule Rectangule) float64 {
-	return 2 * (rectangule.heigth + rectangule.width)
+type Circle struct {
+	radius float64
 }
 
-func Area(rectangule Rectangule) float64 {
-	return rectangule.width * rectangule.heigth
+func (c Circle) area() float64 {
+	return (c.radius * c.radius) * math.Pi
+}
+
+func (r Rectangule) area() float64 {
+	return r.heigth * r.width
+}
+
+func (r Rectangule) perimeter() float64 {
+	return 2 * (r.heigth + r.width)
 }
