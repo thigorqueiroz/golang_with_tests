@@ -12,7 +12,6 @@ func BenchmarkRandomInt(b *testing.B) {
 }
 
 func TestHello(t *testing.T) {
-
 	assertCorrectMessage := func(t testing.TB, got string, want string) {
 		t.Helper()
 		if got != want {
