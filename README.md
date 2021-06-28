@@ -1,2 +1,2 @@
-# golang_with_tests
+# Golang with tests
 https://quii.gitbook.io/learn-go-with-tests
