@@ -9,7 +9,6 @@ const englishPrefix = "Hello, %s."
 
 func grettingFromLanguage(lang string) (prefix string) {
 	prefix = englishPrefix
-
 	switch lang {
 	case "spanish":
 		prefix = "Holla, %s."
